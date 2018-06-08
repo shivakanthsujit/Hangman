@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/hangman"
+        android:layout_width="194dp"
+        android:layout_height="213dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="hangman"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/android_hangman_gallows" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="243dp" />
+
+    <LinearLayout
+        android:id="@+id/word"
+        android:layout_width="225dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline"></LinearLayout>
+
+    <GridView
+        android:id="@+id/letters"
+        android:layout_width="370dp"
+        android:layout_height="223dp"
+
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:horizontalSpacing="5dp"
+        android:numColumns="7"
+        android:padding="5dp"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <EditText
+        android:id="@+id/charL"
+        android:layout_width="87dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Character"
+        android:maxLength="1"
+        android:inputType="textCapSentences"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/word" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="364dp" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="606dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:onClick="checkLetter"
+        android:text="Check"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/charL"
+        app:layout_constraintTop_toBottomOf="@+id/word" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="20dp"
+        android:text="Your Score:"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bestScore" />
+
+    <TextView
+        android:id="@+id/bestScore"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="20dp"
+        android:text="Best Score:"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="44dp" />
+
+</android.support.constraint.ConstraintLayout>
